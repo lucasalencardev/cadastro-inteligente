@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Inteligente</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Cadastro Inteligente</h1>
+
+    <form id="cadastroForm" novalidate>
+
+      <div class="form-group">
+        <label for="nome">Nome Completo *</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite seu nome"
+          minlength="3"
+          required
+          autocomplete="name"
+        >
+        <span class="error-msg" id="nome-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu e-mail"
+          required
+          autocomplete="email"
+        >
+        <span class="error-msg" id="email-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha *</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="Digite sua senha"
+          minlength="8"
+          required
+        >
+
+        <div class="forca-container">
+          <div class="forca-barra" id="forcaBarra"></div>
+        </div>
+
+        <span class="error-msg" id="senha-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmarSenha">Confirmar Senha *</label>
+        <input
+          type="password"
+          id="confirmarSenha"
+          name="confirmarSenha"
+          placeholder="Confirme sua senha"
+          required
+        >
+        <span class="error-msg" id="confirmarSenha-error"></span>
+      </div>
+
+      <button type="submit" id="submitBtn">
+        Criar Conta
+      </button>
+
+      <div class="success-message" id="successMessage"></div>
+
+    </form>
+  </div>
+
+  <script src="js/validation.js"></script>
+</body>
+</html>
