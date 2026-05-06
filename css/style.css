@@ -1,0 +1,141 @@
+/* css/style.css */
+
+:root {
+  --azul: #2E6DA4;
+  --verde: #1E7B4B;
+  --vermelho: #C0392B;
+  --cinza: #dde1e7;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #515151;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.form-container {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--azul);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+input {
+  padding: 14px;
+  border: 2px solid var(--cinza);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: 0.3s;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--azul);
+}
+
+input.error {
+  border-color: var(--vermelho);
+  background: #fff5f5;
+}
+
+input.success {
+  border-color: var(--verde);
+  background: #f0fff4;
+}
+
+.error-msg {
+  color: var(--vermelho);
+  font-size: 0.85rem;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--azul);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.forca-container {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.forca-barra {
+  height: 100%;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.success-message {
+  margin-top: 15px;
+  text-align: center;
+  color: var(--verde);
+  font-weight: bold;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+}
